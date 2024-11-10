@@ -7,6 +7,7 @@ export interface LayoutProps {
 	children: ReactNode
 }
 
+// khai báo next page
 export type NextPageWithLayout = NextPage & {
 	Layout?: (props: LayoutProps) => ReactElement
 	requireLogin?: boolean

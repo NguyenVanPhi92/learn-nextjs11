@@ -16,6 +16,7 @@ import { Auth } from '@/components/common'
 const clientSideEmotionCache = createEmotionCache()
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+	// nếu không có Layout thì sẽ lấy 'EmptyLayout'
 	const Layout = Component.Layout ?? EmptyLayout
 
 	return (

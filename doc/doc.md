@@ -11,4 +11,13 @@ Link file mindmap: https://drive.google.com/file/d/18n8jYJvJCCp4_3c4coP1hiMFpbUP
 * nested route
 * dynamic route
 
-hoc toi video:
+* setup proxy -> http proxy: bài NextJS: 03-02
+
+hoc toi video 16: 9p45
+
+pages:
+
+- api: để viết api cho server: cơ chế hoath động của api nextjs là nextjs sẽ tự tạo đc api cho riêng mình và sau đó từ api của nextjs có thể gọi xuống dưới api của backend
+- blog: page
+- post: page
+- works: page

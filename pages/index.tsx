@@ -25,6 +25,6 @@ const Home: NextPageWithLayout = () => {
 	)
 }
 
-Home.Layout = MainLayout
+Home.Layout = MainLayout // chỉ định cho trang home là sài main layout
 
 export default Home

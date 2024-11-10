@@ -58,7 +58,7 @@ export default function AboutPage(props: AboutPageProps) {
 	)
 }
 
-AboutPage.Layout = AdminLayout
+AboutPage.Layout = AdminLayout // sư dụng admin layout cho trang about
 
 export async function getStaticProps() {
 	console.log('get static props')
@@ -67,9 +67,3 @@ export async function getStaticProps() {
 		props: {},
 	}
 }
-
-// export async function getServerSideProps() {
-// 	return {
-// 		props: {}, // will be passed to the page component as props
-// 	}
-// }
