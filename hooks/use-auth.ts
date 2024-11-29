@@ -7,7 +7,7 @@ function getUserInfo(): UserProfile | null {
 	try {
 		return JSON.parse(localStorage.getItem(StorageKeys.USER_INFO) || '')
 	} catch (error) {
-		// console.log('failed to parse user info from local storage', error)
+		console.log('failed to parse user info from local storage', error)
 		return null
 	}
 }

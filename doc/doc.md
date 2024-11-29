@@ -13,7 +13,7 @@ Link file mindmap: https://drive.google.com/file/d/18n8jYJvJCCp4_3c4coP1hiMFpbUP
 
 * setup proxy -> http proxy: bài NextJS: 03-02
 
-hoc toi video 16: 9p45
+hoc toi video NextJS: 03-06 Integrate API for Login Page
 
 pages:
 

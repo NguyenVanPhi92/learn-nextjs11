@@ -3,12 +3,16 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import httpProxy from 'http-proxy'
 import Cookies from 'cookies'
 
+// file path sẽ chạy trc tiên khi hanlde api đẻ proxy next handle api
+
 // tắt bodyParser
 export const config = {
 	api: {
 		bodyParser: false,
 	},
 }
+
+// proxy server --> http-proxy
 
 // setup proxy
 // Proxy được hiểu đơn giản là sợi dây liên kết giữa người truy cập Internet và Internet,
@@ -22,6 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
 		// convert cookies to header Authorization
 		const cookies = new Cookies(req, res)
 		const accessToken = cookies.get('access_token')
+		// set cookies to cookies chrome
 		if (accessToken) req.headers.Authorization = `Bearer ${accessToken}`
 
 		// don't send cookies to API server
@@ -34,7 +39,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
 			// https://js-post-api.herokuapp.com/api/students
 			target: process.env.API_URL, // api server
 			changeOrigin: true,
-			selfHandleResponse: false,
+			selfHandleResponse: false, // false: proxy sẽ handle response api
 		})
 	})
 }

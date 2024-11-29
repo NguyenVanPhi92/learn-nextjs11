@@ -24,10 +24,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 		// don't send cookies to API server
 		req.headers.cookie = ''
 
+		// handle response login api
 		const handleLoginResponse: ProxyResCallback = (proxyRes, req, res) => {
 			let body = ''
+			// proxy trả về data sau khi handle xong
 			proxyRes.on('data', function (chunk) {
-				body += chunk
+				body += chunk // chunk: data type string
 			})
 
 			proxyRes.on('end', function () {
@@ -39,15 +41,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 						return resolve(true)
 					}
 
-					const { accessToken, expiredAt } = JSON.parse(body)
+					const { accessToken, expiredAt } = JSON.parse(body) // converse data string to object
 
 					// convert token to cookies
 					const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV !== 'development' })
+					// set cookies to cookies chrome
 					cookies.set('access_token', accessToken, {
 						httpOnly: true,
 						sameSite: 'lax',
 						expires: new Date(expiredAt),
 					})
+					// ép kiểu res sang NextApiResponse
 					;(res as NextApiResponse).status(200).json({ message: 'login successfully' })
 				} catch (error) {
 					;(res as NextApiResponse).status(500).json({ message: 'something went wrong' })
@@ -57,11 +61,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 			})
 		}
 
+		// khi có event proxyRes thì gọi hàm handleLoginResponse
 		proxy.once('proxyRes', handleLoginResponse)
 		proxy.web(req, res, {
 			target: process.env.API_URL,
 			changeOrigin: true,
-			selfHandleResponse: true,
+			selfHandleResponse: true, // true: proxy sẽ không handle api response mình sẽ tự handle
 		})
 	})
 }

@@ -13,6 +13,7 @@ export default function LoginPage() {
 		revalidateOnMount: false,
 	})
 
+	// handle event
 	async function handleLoginSubmit(payload: LoginPayload) {
 		try {
 			await login(payload)
