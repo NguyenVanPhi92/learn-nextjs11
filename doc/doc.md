@@ -3,21 +3,24 @@ yarn v1.22.21
 
 Link file mindmap: https://drive.google.com/file/d/18n8jYJvJCCp4_3c4coP1hiMFpbUPPUtv/view?usp=sharing
 
-\* Chapter 2: https://drive.google.com/file/d/1yyl1-RoDg6_jP1nKt0wcrzh7KMkobEMj/view
+- index route
+- nested route
+- dynamic route
+- Navigation
+- SSG, SSR, CSR, ISR
+- Automatic Static Optimization
+- getStaticProps,
+- getStaticPaths
+- SSG and Data Fetching on client side
+- Server side Rendering with cache
+- Incremental Static Regeneration
+- Setup dynamic layout
+- Authentication with Nextjs
+- Basic API with nextjs
+- Proxy request to API server
+- SWR
 
-- Route
-
-* index route
-* nested route
-* dynamic route
-
-* setup proxy -> http proxy: bài NextJS: 03-02
-
-hoc toi video NextJS: 03-06 Integrate API for Login Page
-
-pages:
-
-- api: để viết api cho server: cơ chế hoath động của api nextjs là nextjs sẽ tự tạo đc api cho riêng mình và sau đó từ api của nextjs có thể gọi xuống dưới api của backend
-- blog: page
-- post: page
-- works: page
+* api: để viết api cho server: cơ chế hoath động của api nextjs là nextjs sẽ tự tạo đc api cho riêng mình và sau đó từ api của nextjs có thể gọi xuống dưới api của backend
+* blog: page
+* post: page
+* works: page
